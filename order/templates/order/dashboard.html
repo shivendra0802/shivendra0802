@@ -1,0 +1,15 @@
+{% extends 'order/navbar.html' %}
+
+{% block content %}
+  <h1>Dashboard Page</h1>
+  <!-- 1st Product Slider -->
+<div class="m-3">
+  <h2>Food Deals of The Day</h2>
+  <!-- Slider 1 -->
+  <div class="owl-carousel" id="slider1">
+    {% for b in sp %} 
+    <h3>Product id: {{b.id}}</h2>
+   <a href="{% url 'show_product' b.id %}" class="btn">{{b.name}}</a><div class="item"></div><img src="/media/{{b.photo}}" alt="" height="200px"><span class="fw-bold">{{b.name}}</span><br><span class="fs-5">Rs. {{b.price}}</span></div></a>{% endfor %}
+  </div>
+ </div>
+{% endblock %}

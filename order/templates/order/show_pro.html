@@ -1,0 +1,22 @@
+{% extends 'order/navbar.html' %}
+
+{% block content %}
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-6 text-center align-self-center">
+    <img src="/media/{{cat.photo}}" alt="" height="200px"  class="img-fluid img-thumbnail">
+   </div>
+  <div class="col-sm-5 offset-sm-1">
+   <h2>Product Title: {{cat.title}}</h2>
+   <h3>Product id: {{cat.id}}</h2>
+
+   <hr>
+   <p>Product Description: {{cat.description}}</p> <br>
+   <h4>Rs. {{cat.price}}</h4> <br>
+  </div>
+  <a href="{% url 'showcart'%}" class="btn btn-warning shadow px-5 py-2 ms-4">Go to Cart</a>
+  <a href="{% url 'buynow' %}" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a>
+
+ </div>
+</div>
+{% endblock %}
